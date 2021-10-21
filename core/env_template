@@ -1,0 +1,14 @@
+SECRET_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+ALLOWED_HOSTS = '"127.0.0.1", "localhost", "localhost:8080"'
+ALGORITHM = "HS512"
+DEBUG = 1  
+
+# databases
+REDIS_URL = "redis://localhost:6379"
+
+# authenticate
+USERNAME = "admin"
+PASSWORD = "admin"
+
+# rate limiting per hour
+LIMIT_RATE = 100

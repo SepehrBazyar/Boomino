@@ -54,7 +54,7 @@ async def total_view(
     * If not Authenticated Raised 403 HTTPException
     """
 
-    await login()
+    await login(admin.username, admin.password)
     return {
         'total': total
     }

@@ -1,3 +1,4 @@
+from fastapi import HTTPException
 history, total = [], 0
 
 async def cache(a: int, b: int) -> int:
@@ -14,7 +15,7 @@ async def cache(a: int, b: int) -> int:
     total += result
     return result
 
-async def login():
+async def login(username: str, password: str):
     """
     
     """
