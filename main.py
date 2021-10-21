@@ -1,12 +1,16 @@
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 from api.v1.sumApi.app import sumApi
+from core.utils import startup
 from core.configs import settings
 
 if settings.DEBUG:
     app = FastAPI(default_response_class=ORJSONResponse)
 else:
     app = FastAPI(default_response_class=ORJSONResponse, docs_url=None, redoc_url=None)
+
+# startup event handler
+app.add_event_handler('startup', startup)
 
 # mount subapis
 app.mount("/", sumApi)
