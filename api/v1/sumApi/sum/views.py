@@ -1,7 +1,6 @@
 from fastapi import (
     APIRouter,
     Depends,
-    HTTPException,
     status
 )
 from fastapi.security import OAuth2PasswordRequestForm
@@ -54,7 +53,7 @@ async def total_view(
     * If not Authenticated Raised 403 HTTPException
     """
 
-    await login(admin.username, admin.password)
+    await authenticate(admin.username, admin.password)
     return {
         'total': total
     }
