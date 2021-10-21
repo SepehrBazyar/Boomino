@@ -13,3 +13,10 @@ async def cache(a: int, b: int) -> int:
     })
     total += result
     return result
+
+async def login():
+    """
+    
+    """
+
+    pass
