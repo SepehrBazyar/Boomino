@@ -23,8 +23,8 @@ class Settings(BaseSettings):
     COLLECTION_NAME: str
 
     # authenticate
-    USERNAME: str
-    PASSWORD: str
+    ADMIN_USERNAME: str
+    ADMIN_PASSWORD: str
 
     # rate limiting per hour
     LIMIT_RATE: int

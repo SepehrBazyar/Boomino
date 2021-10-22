@@ -41,7 +41,7 @@ async def authenticate(username: str, password: str):
     Authenticated Admin by Check the Username & Password
     """
 
-    if not(settings.USERNAME == username and verify_password(password)):
+    if not(settings.ADMIN_USERNAME == username and verify_password(password)):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Username or Password is Wrong."
