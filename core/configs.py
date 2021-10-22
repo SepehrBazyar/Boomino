@@ -18,6 +18,8 @@ class Settings(BaseSettings):
 
     # databases
     REDIS_URL: str
+    MONGODB_URL: str
+    COLLECTION_NAME: str
 
     # authenticate
     USERNAME: str

@@ -5,6 +5,8 @@ DEBUG = 1
 
 # databases
 REDIS_URL = "redis://localhost:6379"
+MONGODB_URL: "mongodb://localhost:27017"
+COLLECTION_NAME: "Boomino"
 
 # authenticate
 USERNAME = "admin"
