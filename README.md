@@ -2,7 +2,7 @@
 Boomino Technical Task with FastAPI Framework
 
 ## Tools:
-1. Back-End: Python, FastAPI, FastAPI-Limiter
+1. Back-End: Python, FastAPI, SlowApi(Rate Limiting)
 2. DataBase: MongoDB(Motor Driver), Redis
 
 ## How to Run?
