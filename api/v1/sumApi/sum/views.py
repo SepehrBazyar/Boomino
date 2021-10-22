@@ -32,13 +32,18 @@ async def sum_view(
     "/history/"
 )
 async def history_view(
-
+    admin: OAuth2PasswordRequestForm = Depends()
 ):
     """
-    
+    Show Result of History List All a & b Just Admin
+
+    * If not Authenticated Raised 403 HTTPException
     """
 
-    pass
+    await authenticate(admin.username, admin.password)
+    return {
+        'history': await total_history('history')
+    }
 
 
 @router.get(
@@ -55,5 +60,5 @@ async def total_view(
 
     await authenticate(admin.username, admin.password)
     return {
-        'total': 0
+        'total': await total_history('total')
     }
