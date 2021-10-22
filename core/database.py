@@ -17,7 +17,7 @@ async def get_mongodb():
     Dependencies to Get MongoDB in Views
     """
 
-    return mongodb.db
+    return mongodb.db[settings.COLLECTION_NAME]
 
 async def connect_mongodb():
     """
@@ -27,7 +27,7 @@ async def connect_mongodb():
     mongodb.client = AsyncIOMotorClient(
         settings.MONGODB_URL
     )
-    mongodb.db = mongodb.client[settings.COLLECTION_NAME]
+    mongodb.db = mongodb.client[settings.DATABASE_NAME]
 
 async def close_mongodb():
     """

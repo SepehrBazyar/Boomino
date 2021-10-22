@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     # databases
     REDIS_URL: str
     MONGODB_URL: str
+    DATABASE_NAME: str
     COLLECTION_NAME: str
 
     # authenticate

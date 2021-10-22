@@ -55,5 +55,5 @@ async def total_view(
 
     await authenticate(admin.username, admin.password)
     return {
-        'total': total
+        'total': 0
     }
