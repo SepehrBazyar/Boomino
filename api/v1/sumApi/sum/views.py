@@ -12,7 +12,7 @@ router = APIRouter()
 @router.get(
     "/sum/",
     status_code=status.HTTP_200_OK,
-    dependencies=[Depends(RateLimiter(times=100, hours=1))]
+    # dependencies=[Depends(RateLimiter(times=100, hours=1))]
 )
 async def sum_view(
     a: int,

@@ -34,4 +34,4 @@ async def close_mongodb():
     Close Connection Mongo DataBase in Shutdown Event Handler
     """
 
-    await mongodb.client.close()
+    mongodb.client.close()

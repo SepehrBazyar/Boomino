@@ -10,7 +10,29 @@ async def cache(a: int, b: int) -> int:
 
     result = a + b
     db = await get_mongodb()
-    db.insert_one({'total':result})
+    doc = await db.find_one()
+    if doc is None:
+        await db.insert_one({
+            'total': result,
+            'history': [{
+                'a': a,
+                'b': b
+            }]
+        })
+    else:
+        await db.update_one({
+            '_id': doc['_id']
+        },{
+            '$inc': {
+                'total': result
+            },
+            '$push': {
+                'history': {
+                    'a': a,
+                    'b': b
+                }
+            }
+        })
     return result
 
 async def authenticate(username: str, password: str):
