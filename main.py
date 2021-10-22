@@ -3,6 +3,7 @@ from fastapi.responses import ORJSONResponse
 from api.v1.sumApi.app import sumApi
 from core.utils import startup
 from core.configs import settings
+from core.database import connect_mongodb, close_mongodb
 
 if settings.DEBUG:
     app = FastAPI(default_response_class=ORJSONResponse)
@@ -11,6 +12,10 @@ else:
 
 # startup event handler
 app.add_event_handler('startup', startup)
+app.add_event_handler('startup', connect_mongodb)
+
+# shutdown event handler
+app.add_event_handler('shutdown', close_mongodb)
 
 # mount subapis
 app.mount("/", sumApi)
